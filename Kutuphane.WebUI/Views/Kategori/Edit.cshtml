@@ -1,0 +1,48 @@
+﻿@using Kutuphane.WebUI.Models.Entity;
+@model TblCategory
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model != null)
+{
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Güncelleme Sayfası</h5>
+                </div>
+
+                <div class="card-body">
+                    <form class="row g-3" method="post">
+                        <div class="col-md-4">
+                            <label for="validationDefault01" class="form-label">Kategori Adı</label>
+                            <input type="text" class="form-control" name="Ad" id="validationDefault01" value="@Model.Ad" required>
+                        </div>
+
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@*@using (Html.BeginForm("Edit","Kategori",FormMethod.Post))
+            {
+                <div class="form-group">
+                 
+                    @Html.LabelFor(x => x.Ad)
+                    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+                </div>
+            }*@
+

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutuphane.WebUI", "Kutuphane.WebUI\Kutuphane.WebUI.csproj", "{6E7C5252-AFEC-475A-9210-CB312834E655}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E7C5252-AFEC-475A-9210-CB312834E655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7C5252-AFEC-475A-9210-CB312834E655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7C5252-AFEC-475A-9210-CB312834E655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7C5252-AFEC-475A-9210-CB312834E655}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5E632E9-EEE9-4346-BB40-DEF0E81BD707}
+	EndGlobalSection
+EndGlobal

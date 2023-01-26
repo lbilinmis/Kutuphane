@@ -1,0 +1,82 @@
+﻿@using Kutuphane.WebUI.Models.Entity;
+@model TblUye
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+
+
+    <div class="col-lg-12">
+
+
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Güncelleme Sayfası</h5>
+            </div>
+
+            <div class="card-body">
+                <form class="row g-3" method="post">
+                    <div class="col-md-4">
+                        <label for="Ad" class="form-label">Üye Adı</label>
+                        @*<input type="text" class="form-control" name="AdSoyad" id="validationDefault01" value="" required>*@
+                        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", @id = "Ad" })
+                        @Html.ValidationMessageFor(x => x.Ad, "", new { @style = "color:red" })
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="Soyad" class="form-label">Soyadı</label>
+                        @*<input type="text" class="form-control" name="AdSoyad" id="validationDefault01" value="" required>*@
+                        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control", @id = "Soyad" })
+                        @Html.ValidationMessageFor(x => x.Soyad, "", new { @style = "color:red" })
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="EMail" class="form-label">EMail</label>
+                        @*<input type="text" class="form-control" name="AdSoyad" id="validationDefault01" value="" required>*@
+                        @Html.TextBoxFor(x => x.EMail, new { @class = "form-control", @id = "EMail" })
+                        @Html.ValidationMessageFor(x => x.EMail, "", new { @style = "color:red" })
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Kullanıcı Adı</label>
+                        @*<input type="text" class="form-control" name="AdSoyad" id="validationDefault01" value="" required>*@
+                        @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control", @id = "KullaniciAdi" })
+                        @Html.ValidationMessageFor(x => x.KullaniciAdi, "", new { @style = "color:red" })
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="Sifre" class="form-label">Sifre</label>
+                        @*<input type="text" class="form-control" name="AdSoyad" id="validationDefault01" value="" required>*@
+                        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control", @id = "Sifre" })
+                        @Html.ValidationMessageFor(x => x.Sifre, "", new { @style = "color:red" })
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="Telefon" class="form-label">Telefon</label>
+                        @*<input type="text" class="form-control" name="AdSoyad" id="validationDefault01" value="" required>*@
+                        @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control", @id = "Telefon" })
+                        @Html.ValidationMessageFor(x => x.Telefon, "", new { @style = "color:red" })
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="Okul" class="form-label">Okul</label>
+                        @*<input type="text" class="form-control" name="AdSoyad" id="validationDefault01" value="" required>*@
+                        @Html.TextBoxFor(x => x.Okul, new { @class = "form-control", @id = "Okul" })
+                        @Html.ValidationMessageFor(x => x.Okul, "", new { @style = "color:red" })
+                    </div>
+
+
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

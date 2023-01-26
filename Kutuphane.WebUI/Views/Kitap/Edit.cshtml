@@ -1,0 +1,73 @@
+﻿@using Kutuphane.WebUI.Models.Entity;
+@model TblKitap
+
+@{
+    ViewBag.Title = "Güncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model != null)
+{
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Güncelleme Sayfası</h5>
+                </div>
+
+                <div class="card-body">
+                    <form class="row g-3" method="post">
+                        <div class="col-md-2">
+                            <label class="form-label">Adı</label>
+                            @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label">Kategori</label>
+                            @Html.DropDownListFor(x => x.KategoriId, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control form-select" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label">Yazar</label>
+                            @Html.DropDownListFor(x => x.YazarId, (List<SelectListItem>)ViewBag.yazarlar, new { @class = "form-control form-select" })
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Yayınevi</label>
+                            @Html.TextBoxFor(x => x.YayinEvi, new { @class = "form-control" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label">Sayfa</label>
+                            @Html.TextBoxFor(x => x.Sayfa, new { @class = "form-control" })
+                        </div>
+
+
+                        <div class="col-md-2">
+                            <label class="form-label">Basım Yılı</label>
+                            @Html.TextBoxFor(x => x.BasimYili, new { @class = "form-control" })
+                        </div>
+
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@*@using (Html.BeginForm("Edit","Kategori",FormMethod.Post))
+    {
+        <div class="form-group">
+
+            @Html.LabelFor(x => x.Ad)
+            @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+        </div>
+    }*@
+

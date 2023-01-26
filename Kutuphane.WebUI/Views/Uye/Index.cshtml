@@ -1,0 +1,79 @@
+﻿@using Kutuphane.WebUI.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@*@model List<TblUye>*@
+@model PagedList.IPagedList<TblUye>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+
+
+    <div class="col-lg-12">
+
+
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Uye Listesi</h5>
+            </div>
+            <div class="card-body">
+                <a href="/Uye/Add" class="btn btn-primary">Yeni Uye</a>
+            </div>
+            <div class="card-body">
+                <table id="scroll-vertical" class="table table-bordered dt-responsive nowrap align-middle mdl-data-table" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Uye Adı Soyad</th>
+                            <th>Email</th>
+                            <th>Kullanıcı Adı</th>
+                            <th>Şifre</th>
+                            <th>Telefon</th>
+                            <th>Okul</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@(item.Ad+" "+ item.Soyad)</td>
+                                    <td>@item.EMail</td>
+                                    <td>@item.KullaniciAdi</td>
+                                    <td>@item.Sifre</td>
+                                    <td>@item.Telefon</td>
+                                    <td>@item.Okul</td>
+
+                                    <td><a id="delete" href="/Uye/Delete/@item.Id"><span class="badge badge-soft-danger">Sil</span></a></td>
+
+
+                                    <td><a href="/Uye/Edit/@item.Id"><span class="badge badge-soft-info">Düzenle</span></a></td>
+
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="9"><span class="badge badge-border badge-gradient-danger">Kayıt bulunamadı</span></td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+
+                </table>
+                @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
+            </div>
+        </div>
+    </div>
+
+</div>

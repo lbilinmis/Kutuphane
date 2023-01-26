@@ -1,0 +1,40 @@
+﻿@using Kutuphane.WebUI.Models.Entity;
+@model TblPersonel
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+
+
+    <div class="col-lg-12">
+
+
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Ekleme Sayfası</h5>
+            </div>
+
+            <div class="card-body">
+                <form class="row g-3" method="post">
+                    <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Personel Adı</label>
+                        @*<input type="text" class="form-control" name="AdSoyad" id="validationDefault01" value="" required>*@
+                        @Html.TextBoxFor(x=>x.AdSoyad, new { @class = "form-control" , @id = "validationDefault01" })
+                        @Html.ValidationMessageFor(x=>x.AdSoyad,"",new {@style="color:red"})
+                    </div>
+
+
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E7C5252-AFEC-475A-9210-CB312834E655}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kutuphane.WebUI</RootNamespace>
+    <AssemblyName>Kutuphane.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44346</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\KitapController.cs" />
+    <Compile Include="Controllers\OduncController.cs" />
+    <Compile Include="Controllers\PersonelController.cs" />
+    <Compile Include="Controllers\UyeController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblCeza.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblHareket.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblKasa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblKitap.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblPersonel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblUye.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblYazar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\adminpanel\advance-ui-animation.html" />
+    <Content Include="Content\adminpanel\advance-ui-highlight.html" />
+    <Content Include="Content\adminpanel\advance-ui-nestable.html" />
+    <Content Include="Content\adminpanel\advance-ui-ratings.html" />
+    <Content Include="Content\adminpanel\advance-ui-scrollbar.html" />
+    <Content Include="Content\adminpanel\advance-ui-scrollspy.html" />
+    <Content Include="Content\adminpanel\advance-ui-sweetalerts.html" />
+    <Content Include="Content\adminpanel\advance-ui-swiper.html" />
+    <Content Include="Content\adminpanel\advance-ui-tour.html" />
+    <Content Include="Content\adminpanel\apps-calendar.html" />
+    <Content Include="Content\adminpanel\apps-chat.html" />
+    <Content Include="Content\adminpanel\apps-crm-companies.html" />
+    <Content Include="Content\adminpanel\apps-crm-contacts.html" />
+    <Content Include="Content\adminpanel\apps-crm-deals.html" />
+    <Content Include="Content\adminpanel\apps-crm-leads.html" />
+    <Content Include="Content\adminpanel\apps-crypto-buy-sell.html" />
+    <Content Include="Content\adminpanel\apps-crypto-ico.html" />
+    <Content Include="Content\adminpanel\apps-crypto-kyc.html" />
+    <Content Include="Content\adminpanel\apps-crypto-orders.html" />
+    <Content Include="Content\adminpanel\apps-crypto-transactions.html" />
+    <Content Include="Content\adminpanel\apps-crypto-wallet.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-add-product.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-cart.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-checkout.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-customers.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-order-details.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-orders.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-product-details.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-products.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-seller-details.html" />
+    <Content Include="Content\adminpanel\apps-ecommerce-sellers.html" />
+    <Content Include="Content\adminpanel\apps-email-basic.html" />
+    <Content Include="Content\adminpanel\apps-email-ecommerce.html" />
+    <Content Include="Content\adminpanel\apps-invoices-create.html" />
+    <Content Include="Content\adminpanel\apps-invoices-details.html" />
+    <Content Include="Content\adminpanel\apps-invoices-list.html" />
+    <Content Include="Content\adminpanel\apps-mailbox.html" />
+    <Content Include="Content\adminpanel\apps-nft-auction.html" />
+    <Content Include="Content\adminpanel\apps-nft-collections.html" />
+    <Content Include="Content\adminpanel\apps-nft-create.html" />
+    <Content Include="Content\adminpanel\apps-nft-creators.html" />
+    <Content Include="Content\adminpanel\apps-nft-explore.html" />
+    <Content Include="Content\adminpanel\apps-nft-item-details.html" />
+    <Content Include="Content\adminpanel\apps-nft-marketplace.html" />
+    <Content Include="Content\adminpanel\apps-nft-ranking.html" />
+    <Content Include="Content\adminpanel\apps-nft-wallet.html" />
+    <Content Include="Content\adminpanel\apps-projects-create.html" />
+    <Content Include="Content\adminpanel\apps-projects-list.html" />
+    <Content Include="Content\adminpanel\apps-projects-overview.html" />
+    <Content Include="Content\adminpanel\apps-tasks-details.html" />
+    <Content Include="Content\adminpanel\apps-tasks-kanban.html" />
+    <Content Include="Content\adminpanel\apps-tasks-list-view.html" />
+    <Content Include="Content\adminpanel\apps-tickets-details.html" />
+    <Content Include="Content\adminpanel\apps-tickets-list.html" />
+    <Content Include="Content\adminpanel\assets\css\app.min.css" />
+    <Content Include="Content\adminpanel\assets\css\bootstrap.min.css" />
+    <Content Include="Content\adminpanel\assets\css\custom.min.css" />
+    <Content Include="Content\adminpanel\assets\css\icons.min.css" />
+    <Content Include="Content\adminpanel\assets\fonts\boxicons.html" />
+    <Content Include="Content\adminpanel\assets\fonts\boxiconsd41d.svg" />
+    <Content Include="Content\adminpanel\assets\fonts\la-brands-400.html" />
+    <Content Include="Content\adminpanel\assets\fonts\la-brands-400.svg" />
+    <Content Include="Content\adminpanel\assets\fonts\la-regular-400.html" />
+    <Content Include="Content\adminpanel\assets\fonts\la-regular-400.svg" />
+    <Content Include="Content\adminpanel\assets\fonts\la-solid-900.html" />
+    <Content Include="Content\adminpanel\assets\fonts\la-solid-900.svg" />
+    <Content Include="Content\adminpanel\assets\fonts\materialdesignicons-webfont1d2d.html" />
+    <Content Include="Content\adminpanel\assets\fonts\remixicondf6d.html" />
+    <Content Include="Content\adminpanel\assets\fonts\remixicondf6d.svg" />
+    <Content Include="Content\adminpanel\assets\images\auth-offline.gif" />
+    <Content Include="Content\adminpanel\assets\images\auth-one-bg.jpg" />
+    <Content Include="Content\adminpanel\assets\images\bg-d.png" />
+    <Content Include="Content\adminpanel\assets\images\brands\bitbucket.png" />
+    <Content Include="Content\adminpanel\assets\images\brands\dribbble.png" />
+    <Content Include="Content\adminpanel\assets\images\brands\dropbox.png" />
+    <Content Include="Content\adminpanel\assets\images\brands\github.png" />
+    <Content Include="Content\adminpanel\assets\images\brands\mail_chimp.png" />
+    <Content Include="Content\adminpanel\assets\images\brands\slack.png" />
+    <Content Include="Content\adminpanel\assets\images\clients\amazon.svg" />
+    <Content Include="Content\adminpanel\assets\images\clients\lenovo.svg" />
+    <Content Include="Content\adminpanel\assets\images\clients\paypal.svg" />
+    <Content Include="Content\adminpanel\assets\images\clients\shopify.svg" />
+    <Content Include="Content\adminpanel\assets\images\clients\verizon.svg" />
+    <Content Include="Content\adminpanel\assets\images\clients\walmart.svg" />
+    <Content Include="Content\adminpanel\assets\images\comingsoon.png" />
+    <Content Include="Content\adminpanel\assets\images\companies\img-1.png" />
+    <Content Include="Content\adminpanel\assets\images\companies\img-2.png" />
+    <Content Include="Content\adminpanel\assets\images\companies\img-3.png" />
+    <Content Include="Content\adminpanel\assets\images\companies\img-4.png" />
+    <Content Include="Content\adminpanel\assets\images\companies\img-5.png" />
+    <Content Include="Content\adminpanel\assets\images\companies\img-6.png" />
+    <Content Include="Content\adminpanel\assets\images\companies\img-7.png" />
+    <Content Include="Content\adminpanel\assets\images\companies\img-8.png" />
+    <Content Include="Content\adminpanel\assets\images\demos\creative.png" />
+    <Content Include="Content\adminpanel\assets\images\demos\default.png" />
+    <Content Include="Content\adminpanel\assets\images\demos\interactive.png" />
+    <Content Include="Content\adminpanel\assets\images\demos\material.png" />
+    <Content Include="Content\adminpanel\assets\images\demos\minimal.png" />
+    <Content Include="Content\adminpanel\assets\images\demos\modern.png" />
+    <Content Include="Content\adminpanel\assets\images\demos\saas.png" />
+    <Content Include="Content\adminpanel\assets\images\error.svg" />
+    <Content Include="Content\adminpanel\assets\images\error400-cover.png" />
+    <Content Include="Content\adminpanel\assets\images\error500.png" />
+    <Content Include="Content\adminpanel\assets\images\faq-img.png" />
+    <Content Include="Content\adminpanel\assets\images\favicon.ico" />
+    <Content Include="Content\adminpanel\assets\images\flags\china.svg" />
+    <Content Include="Content\adminpanel\assets\images\flags\french.svg" />
+    <Content Include="Content\adminpanel\assets\images\flags\germany.svg" />
+    <Content Include="Content\adminpanel\assets\images\flags\italy.svg" />
+    <Content Include="Content\adminpanel\assets\images\flags\russia.svg" />
+    <Content Include="Content\adminpanel\assets\images\flags\spain.svg" />
+    <Content Include="Content\adminpanel\assets\images\flags\us.svg" />
+    <Content Include="Content\adminpanel\assets\images\giftbox.png" />
+    <Content Include="Content\adminpanel\assets\images\illustrator-1.png" />
+    <Content Include="Content\adminpanel\assets\images\landing\features\img-1.png" />
+    <Content Include="Content\adminpanel\assets\images\landing\features\img-2.png" />
+    <Content Include="Content\adminpanel\assets\images\landing\features\img-3.png" />
+    <Content Include="Content\adminpanel\assets\images\landing\img-pattern.png" />
+    <Content Include="Content\adminpanel\assets\images\landing\process-arrow-img.png" />
+    <Content Include="Content\adminpanel\assets\images\logo-dark.png" />
+    <Content Include="Content\adminpanel\assets\images\logo-light.png" />
+    <Content Include="Content\adminpanel\assets\images\logo-sm.png" />
+    <Content Include="Content\adminpanel\assets\images\mac-img.png" />
+    <Content Include="Content\adminpanel\assets\images\maintenance.png" />
+    <Content Include="Content\adminpanel\assets\images\modals\login.png" />
+    <Content Include="Content\adminpanel\assets\images\modals\signup.png" />
+    <Content Include="Content\adminpanel\assets\images\modals\subscribe.png" />
+    <Content Include="Content\adminpanel\assets\images\modals\success-payment.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\add.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\bg-pattern.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\gif\img-1.gif" />
+    <Content Include="Content\adminpanel\assets\images\nft\gif\img-2.gif" />
+    <Content Include="Content\adminpanel\assets\images\nft\gif\img-3.gif" />
+    <Content Include="Content\adminpanel\assets\images\nft\gif\img-4.gif" />
+    <Content Include="Content\adminpanel\assets\images\nft\gif\img-5.gif" />
+    <Content Include="Content\adminpanel\assets\images\nft\img-01.jpg" />
+    <Content Include="Content\adminpanel\assets\images\nft\img-02.jpg" />
+    <Content Include="Content\adminpanel\assets\images\nft\img-03.jpg" />
+    <Content Include="Content\adminpanel\assets\images\nft\img-04.jpg" />
+    <Content Include="Content\adminpanel\assets\images\nft\img-05.jpg" />
+    <Content Include="Content\adminpanel\assets\images\nft\img-06.jpg" />
+    <Content Include="Content\adminpanel\assets\images\nft\money.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\sell.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\wallet.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\wallet\alpha.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\wallet\binance.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\wallet\coinbase.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\wallet\enjin.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\wallet\kukai.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\wallet\math.png" />
+    <Content Include="Content\adminpanel\assets\images\nft\wallet\metamask.png" />
+    <Content Include="Content\adminpanel\assets\images\products\img-1.png" />
+    <Content Include="Content\adminpanel\assets\images\products\img-10.png" />
+    <Content Include="Content\adminpanel\assets\images\products\img-2.png" />
+    <Content Include="Content\adminpanel\assets\images\products\img-3.png" />
+    <Content Include="Content\adminpanel\assets\images\products\img-4.png" />
+    <Content Include="Content\adminpanel\assets\images\products\img-5.png" />
+    <Content Include="Content\adminpanel\assets\images\products\img-6.png" />
+    <Content Include="Content\adminpanel\assets\images\products\img-7.png" />
+    <Content Include="Content\adminpanel\assets\images\products\img-8.png" />
+    <Content Include="Content\adminpanel\assets\images\profile-bg.jpg" />
+    <Content Include="Content\adminpanel\assets\images\sidebar\img-1.jpg" />
+    <Content Include="Content\adminpanel\assets\images\sidebar\img-2.jpg" />
+    <Content Include="Content\adminpanel\assets\images\sidebar\img-3.jpg" />
+    <Content Include="Content\adminpanel\assets\images\sidebar\img-4.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-1.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-10.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-11.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-12.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-2.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-3.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-4.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-5.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-6.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-7.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-8.jpg" />
+    <Content Include="Content\adminpanel\assets\images\small\img-9.jpg" />
+    <Content Include="Content\adminpanel\assets\images\svg\bell.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\aave.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\ada.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\add.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\ant.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\ark.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\arn.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\atm.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\bcbc.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\bela.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\bix.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\bnb.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\btc.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\cs.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\dash.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\doge.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\dot.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\etc.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\eth.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\eur.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\fil.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\gbp.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\jpy.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\ltc.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\mkr.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\mln.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\neo.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\ppt.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\rise.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\sol.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\usdt.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\vtc.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\xmr.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\xpm.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\xrp.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\xsg.svg" />
+    <Content Include="Content\adminpanel\assets\images\svg\crypto-icons\yfi.svg" />
+    <Content Include="Content\adminpanel\assets\images\sweetalert2\email-verify.png" />
+    <Content Include="Content\adminpanel\assets\images\sweetalert2\error-message.png" />
+    <Content Include="Content\adminpanel\assets\images\sweetalert2\join-community.png" />
+    <Content Include="Content\adminpanel\assets\images\sweetalert2\notification-message.png" />
+    <Content Include="Content\adminpanel\assets\images\sweetalert2\success-message.png" />
+    <Content Include="Content\adminpanel\assets\images\sweetalert2\warning-message.png" />
+    <Content Include="Content\adminpanel\assets\images\user-illustarator-1.png" />
+    <Content Include="Content\adminpanel\assets\images\user-illustarator-2.png" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-1.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-10.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-2.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-3.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-4.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-5.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-6.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-7.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-8.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\avatar-9.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\multi-user.jpg" />
+    <Content Include="Content\adminpanel\assets\images\users\user-dummy-img.jpg" />
+    <Content Include="Content\adminpanel\assets\images\verification-img.png" />
+    <Content Include="Content\adminpanel\assets\js\app.js" />
+    <Content Include="Content\adminpanel\assets\js\layout.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\animation-aos.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-area.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-bar.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-boxplot.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-bubble.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-candlestick.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-column.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-heatmap.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-line.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-mixed.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-pie.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-polararea.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-radar.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-radialbar.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-scatter.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-timeline.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apexcharts-treemap.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apps-nft-auction.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apps-nft-create.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apps-nft-explore.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apps-nft-item-details.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\apps-nft-ranking.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\calendar.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\card.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\chartjs.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\chat.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\coming-soon.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\crm-companies.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\crm-contact.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\crm-deals.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\crm-leads.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\crypto-buy-sell.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\crypto-kyc.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\crypto-orders.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\crypto-transactions.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\crypto-wallet.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\dashboard-analytics.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\dashboard-crm.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\dashboard-crypto.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\dashboard-ecommerce.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\dashboard-nft.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\dashboard-projects.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\datatables.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\echarts.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\ecommerce-cart.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\ecommerce-customer-list.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\ecommerce-order.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\ecommerce-product-checkout.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\ecommerce-product-create.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\ecommerce-product-details.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\ecommerce-product-list.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\form-advanced.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\form-editor.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\form-file-upload.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\form-input-spin.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\form-masks.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\form-pickers.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\form-validation.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\form-wizard.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\gallery.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\gmaps.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\gridjs.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\invoicecreate.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\invoicedetails.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\invoiceslist.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\landing.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\leaflet-map.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\leaflet-us-states.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\listjs.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\mailbox.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\materialdesign.list.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\modal.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\nestable.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\nft-landing.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\notifications.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\particles.app.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\passowrd-create.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\password-addon.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\plugins\lord-icon-2.1.0.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\pricing.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\profile-setting.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\profile.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\project-create.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\project-list.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\project-overview.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\range-sliders.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\rating.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\remix-icons-listing.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\search-result.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\select2.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\seller-details.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\sellers.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\sweetalerts.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\swiper.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\tasks-kanban.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\tasks-list.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\team.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\ticketdetail.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\ticketlist.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\timeline.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\tour.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\two-step-verification.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\vector-maps.init.js" />
+    <Content Include="Content\adminpanel\assets\js\pages\widgets.init.js" />
+    <Content Include="Content\adminpanel\assets\js\plugins.js" />
+    <Content Include="Content\adminpanel\assets\libs\%40ckeditor\ckeditor5-build-classic\build\ckeditor.js" />
+    <Content Include="Content\adminpanel\assets\libs\%40simonwep\pickr\pickr.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\%40simonwep\pickr\themes\classic.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\%40simonwep\pickr\themes\monolith.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\%40simonwep\pickr\themes\nano.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\%40tarekraafat\autocomplete.js\autoComplete.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\%40tarekraafat\autocomplete.js\css\autoComplete.css" />
+    <Content Include="Content\adminpanel\assets\libs\%40tarekraafat\autocomplete.js\css\images\search.svg" />
+    <Content Include="Content\adminpanel\assets\libs\aos\aos.css" />
+    <Content Include="Content\adminpanel\assets\libs\aos\aos.js" />
+    <Content Include="Content\adminpanel\assets\libs\apexcharts\apexcharts.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\chart.js\chart.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\cleave.js\cleave.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\dom-autoscroller\dom-autoscroller.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\dragula\dragula.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\dragula\dragula.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\dropzone\dropzone-min.js" />
+    <Content Include="Content\adminpanel\assets\libs\dropzone\dropzone.css" />
+    <Content Include="Content\adminpanel\assets\libs\echarts\echarts.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\feather-icons\feather.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\fg-emoji-picker\fgEmojiPicker.js" />
+    <Content Include="Content\adminpanel\assets\libs\filepond-plugin-file-encode\filepond-plugin-file-encode.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\filepond-plugin-file-validate-size\filepond-plugin-file-validate-size.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\filepond-plugin-image-exif-orientation\filepond-plugin-image-exif-orientation.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\filepond-plugin-image-preview\filepond-plugin-image-preview.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\filepond-plugin-image-preview\filepond-plugin-image-preview.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\filepond\filepond.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\filepond\filepond.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\fullcalendar\main.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\fullcalendar\main.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\glightbox\css\glightbox.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\glightbox\js\glightbox.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\gmaps\gmaps.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\gridjs\gridjs.umd.js" />
+    <Content Include="Content\adminpanel\assets\libs\gridjs\theme\mermaid.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\jsvectormap\css\jsvectormap.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\jsvectormap\js\jsvectormap.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\jsvectormap\maps\canada.js" />
+    <Content Include="Content\adminpanel\assets\libs\jsvectormap\maps\russia.js" />
+    <Content Include="Content\adminpanel\assets\libs\jsvectormap\maps\spain.js" />
+    <Content Include="Content\adminpanel\assets\libs\jsvectormap\maps\us-merc-en.js" />
+    <Content Include="Content\adminpanel\assets\libs\jsvectormap\maps\world-merc.js" />
+    <Content Include="Content\adminpanel\assets\libs\leaflet\images\layers-2x.png" />
+    <Content Include="Content\adminpanel\assets\libs\leaflet\images\layers.png" />
+    <Content Include="Content\adminpanel\assets\libs\leaflet\images\marker-icon.png" />
+    <Content Include="Content\adminpanel\assets\libs\leaflet\leaflet.css" />
+    <Content Include="Content\adminpanel\assets\libs\leaflet\leaflet.js" />
+    <Content Include="Content\adminpanel\assets\libs\list.js\list.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\list.pagination.js\list.pagination.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\masonry-layout\masonry.pkgd.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\moment\min\moment.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\moment\moment.js" />
+    <Content Include="Content\adminpanel\assets\libs\multi.js\multi.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\multi.js\multi.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\node-waves\waves.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\nouislider\nouislider.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\nouislider\nouislider.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\particles.js\particles.js" />
+    <Content Include="Content\adminpanel\assets\libs\prismjs\prism.js" />
+    <Content Include="Content\adminpanel\assets\libs\quill\quill.bubble.css" />
+    <Content Include="Content\adminpanel\assets\libs\quill\quill.core.css" />
+    <Content Include="Content\adminpanel\assets\libs\quill\quill.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\quill\quill.snow.css" />
+    <Content Include="Content\adminpanel\assets\libs\rater-js\index.js" />
+    <Content Include="Content\adminpanel\assets\libs\shepherd.js\css\shepherd.css" />
+    <Content Include="Content\adminpanel\assets\libs\shepherd.js\js\shepherd.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\simplebar\simplebar.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\sortablejs\Sortable.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\sweetalert2\sweetalert2.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\sweetalert2\sweetalert2.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\swiper\swiper-bundle.min.css" />
+    <Content Include="Content\adminpanel\assets\libs\swiper\swiper-bundle.min.js" />
+    <Content Include="Content\adminpanel\assets\libs\wnumb\wNumb.min.js" />
+    <Content Include="Content\adminpanel\auth-404-alt.html" />
+    <Content Include="Content\adminpanel\auth-404-basic.html" />
+    <Content Include="Content\adminpanel\auth-404-cover.html" />
+    <Content Include="Content\adminpanel\auth-500.html" />
+    <Content Include="Content\adminpanel\auth-lockscreen-basic.html" />
+    <Content Include="Content\adminpanel\auth-lockscreen-cover.html" />
+    <Content Include="Content\adminpanel\auth-logout-basic.html" />
+    <Content Include="Content\adminpanel\auth-logout-cover.html" />
+    <Content Include="Content\adminpanel\auth-offline.html" />
+    <Content Include="Content\adminpanel\auth-pass-change-basic.html" />
+    <Content Include="Content\adminpanel\auth-pass-change-cover.html" />
+    <Content Include="Content\adminpanel\auth-pass-reset-basic.html" />
+    <Content Include="Content\adminpanel\auth-pass-reset-cover.html" />
+    <Content Include="Content\adminpanel\auth-signin-basic.html" />
+    <Content Include="Content\adminpanel\auth-signin-cover.html" />
+    <Content Include="Content\adminpanel\auth-signup-basic.html" />
+    <Content Include="Content\adminpanel\auth-signup-cover.html" />
+    <Content Include="Content\adminpanel\auth-success-msg-basic.html" />
+    <Content Include="Content\adminpanel\auth-success-msg-cover.html" />
+    <Content Include="Content\adminpanel\auth-twostep-basic.html" />
+    <Content Include="Content\adminpanel\auth-twostep-cover.html" />
+    <Content Include="Content\adminpanel\charts-apex-area.html" />
+    <Content Include="Content\adminpanel\charts-apex-bar.html" />
+    <Content Include="Content\adminpanel\charts-apex-boxplot.html" />
+    <Content Include="Content\adminpanel\charts-apex-bubble.html" />
+    <Content Include="Content\adminpanel\charts-apex-candlestick.html" />
+    <Content Include="Content\adminpanel\charts-apex-column.html" />
+    <Content Include="Content\adminpanel\charts-apex-heatmap.html" />
+    <Content Include="Content\adminpanel\charts-apex-line.html" />
+    <Content Include="Content\adminpanel\charts-apex-mixed.html" />
+    <Content Include="Content\adminpanel\charts-apex-pie.html" />
+    <Content Include="Content\adminpanel\charts-apex-polar.html" />
+    <Content Include="Content\adminpanel\charts-apex-radar.html" />
+    <Content Include="Content\adminpanel\charts-apex-radialbar.html" />
+    <Content Include="Content\adminpanel\charts-apex-scatter.html" />
+    <Content Include="Content\adminpanel\charts-apex-timeline.html" />
+    <Content Include="Content\adminpanel\charts-apex-treemap.html" />
+    <Content Include="Content\adminpanel\charts-chartjs.html" />
+    <Content Include="Content\adminpanel\charts-echarts.html" />
+    <Content Include="Content\adminpanel\dashboard-analytics.html" />
+    <Content Include="Content\adminpanel\dashboard-crm.html" />
+    <Content Include="Content\adminpanel\dashboard-crypto.html" />
+    <Content Include="Content\adminpanel\dashboard-nft.html" />
+    <Content Include="Content\adminpanel\dashboard-projects.html" />
+    <Content Include="Content\adminpanel\ecommerce-product-detail.html" />
+    <Content Include="Content\adminpanel\forms-advanced.html" />
+    <Content Include="Content\adminpanel\forms-checkboxs-radios.html" />
+    <Content Include="Content\adminpanel\forms-editors.html" />
+    <Content Include="Content\adminpanel\forms-elements.html" />
+    <Content Include="Content\adminpanel\forms-file-uploads.html" />
+    <Content Include="Content\adminpanel\forms-layouts.html" />
+    <Content Include="Content\adminpanel\forms-masks.html" />
+    <Content Include="Content\adminpanel\forms-pickers.html" />
+    <Content Include="Content\adminpanel\forms-range-sliders.html" />
+    <Content Include="Content\adminpanel\forms-select.html" />
+    <Content Include="Content\adminpanel\forms-select2.html" />
+    <Content Include="Content\adminpanel\forms-validation.html" />
+    <Content Include="Content\adminpanel\forms-wizard.html" />
+    <Content Include="Content\adminpanel\icons-boxicons.html" />
+    <Content Include="Content\adminpanel\icons-feather.html" />
+    <Content Include="Content\adminpanel\icons-lineawesome.html" />
+    <Content Include="Content\adminpanel\icons-materialdesign.html" />
+    <Content Include="Content\adminpanel\icons-remix.html" />
+    <Content Include="Content\adminpanel\index.html" />
+    <Content Include="Content\adminpanel\landing.html" />
+    <Content Include="Content\adminpanel\layouts-detached.html" />
+    <Content Include="Content\adminpanel\layouts-horizontal.html" />
+    <Content Include="Content\adminpanel\layouts-two-column.html" />
+    <Content Include="Content\adminpanel\layouts-vertical-hovered.html" />
+    <Content Include="Content\adminpanel\maps-google.html" />
+    <Content Include="Content\adminpanel\maps-leaflet.html" />
+    <Content Include="Content\adminpanel\maps-vector.html" />
+    <Content Include="Content\adminpanel\nft-landing.html" />
+    <Content Include="Content\adminpanel\pages-coming-soon.html" />
+    <Content Include="Content\adminpanel\pages-faqs.html" />
+    <Content Include="Content\adminpanel\pages-gallery.html" />
+    <Content Include="Content\adminpanel\pages-maintenance.html" />
+    <Content Include="Content\adminpanel\pages-pricing.html" />
+    <Content Include="Content\adminpanel\pages-profile-settings.html" />
+    <Content Include="Content\adminpanel\pages-profile.html" />
+    <Content Include="Content\adminpanel\pages-search-results.html" />
+    <Content Include="Content\adminpanel\pages-sitemap.html" />
+    <Content Include="Content\adminpanel\pages-starter.html" />
+    <Content Include="Content\adminpanel\pages-team.html" />
+    <Content Include="Content\adminpanel\pages-timeline.html" />
+    <Content Include="Content\adminpanel\tables-basic.html" />
+    <Content Include="Content\adminpanel\tables-datatables.html" />
+    <Content Include="Content\adminpanel\tables-gridjs.html" />
+    <Content Include="Content\adminpanel\tables-listjs.html" />
+    <Content Include="Content\adminpanel\ui-accordions.html" />
+    <Content Include="Content\adminpanel\ui-alerts.html" />
+    <Content Include="Content\adminpanel\ui-badges.html" />
+    <Content Include="Content\adminpanel\ui-buttons.html" />
+    <Content Include="Content\adminpanel\ui-cards.html" />
+    <Content Include="Content\adminpanel\ui-carousel.html" />
+    <Content Include="Content\adminpanel\ui-colors.html" />
+    <Content Include="Content\adminpanel\ui-dropdowns.html" />
+    <Content Include="Content\adminpanel\ui-embed-video.html" />
+    <Content Include="Content\adminpanel\ui-general.html" />
+    <Content Include="Content\adminpanel\ui-grid.html" />
+    <Content Include="Content\adminpanel\ui-images.html" />
+    <Content Include="Content\adminpanel\ui-lists.html" />
+    <Content Include="Content\adminpanel\ui-media.html" />
+    <Content Include="Content\adminpanel\ui-modals.html" />
+    <Content Include="Content\adminpanel\ui-notifications.html" />
+    <Content Include="Content\adminpanel\ui-offcanvas.html" />
+    <Content Include="Content\adminpanel\ui-placeholders.html" />
+    <Content Include="Content\adminpanel\ui-progress.html" />
+    <Content Include="Content\adminpanel\ui-ribbons.html" />
+    <Content Include="Content\adminpanel\ui-tabs.html" />
+    <Content Include="Content\adminpanel\ui-typography.html" />
+    <Content Include="Content\adminpanel\ui-utilities.html" />
+    <Content Include="Content\adminpanel\widgets.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Entity\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Entity\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\adminpanel\assets\fonts\boxicons.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\boxicons.ttf" />
+    <Content Include="Content\adminpanel\assets\fonts\boxicons.woff" />
+    <Content Include="Content\adminpanel\assets\fonts\la-brands-400.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\la-brands-400.ttf" />
+    <Content Include="Content\adminpanel\assets\fonts\la-brands-400.woff" />
+    <Content Include="Content\adminpanel\assets\fonts\la-brands-400d41d.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\la-regular-400.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\la-regular-400.ttf" />
+    <Content Include="Content\adminpanel\assets\fonts\la-regular-400.woff" />
+    <Content Include="Content\adminpanel\assets\fonts\la-regular-400d41d.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\la-solid-900.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\la-solid-900.ttf" />
+    <Content Include="Content\adminpanel\assets\fonts\la-solid-900.woff" />
+    <Content Include="Content\adminpanel\assets\fonts\la-solid-900d41d.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\materialdesignicons-webfont1d2d.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\materialdesignicons-webfont1d2d.ttf" />
+    <Content Include="Content\adminpanel\assets\fonts\materialdesignicons-webfont1d2d.woff" />
+    <Content Include="Content\adminpanel\assets\fonts\materialdesignicons-webfontd41d.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\remixicondf6d.eot" />
+    <Content Include="Content\adminpanel\assets\fonts\remixicondf6d.ttf" />
+    <Content Include="Content\adminpanel\assets\fonts\remixicondf6d.woff" />
+    <EntityDeploy Include="Models\Entity\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entity\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Kategori\Index.cshtml" />
+    <Content Include="Views\Kategori\Add.cshtml" />
+    <Content Include="Views\Kategori\Edit.cshtml" />
+    <Content Include="Views\Yazar\Index.cshtml" />
+    <Content Include="Views\Yazar\Add.cshtml" />
+    <Content Include="Views\Yazar\Edit.cshtml" />
+    <Content Include="Views\Kitap\Index.cshtml" />
+    <Content Include="Views\Kitap\Add.cshtml" />
+    <Content Include="Views\Kitap\Edit.cshtml" />
+    <Content Include="Views\Personel\Index.cshtml" />
+    <Content Include="Views\Personel\Add.cshtml" />
+    <Content Include="Views\Personel\Edit.cshtml" />
+    <Content Include="Views\Uye\Index.cshtml" />
+    <Content Include="Views\Uye\Add.cshtml" />
+    <Content Include="Views\Uye\Edit.cshtml" />
+    <Content Include="Views\Odunc\OduncVer.cshtml" />
+    <Content Include="Views\Odunc\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62515</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44346/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

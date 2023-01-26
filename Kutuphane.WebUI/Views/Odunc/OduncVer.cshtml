@@ -1,0 +1,61 @@
+﻿@using Kutuphane.WebUI.Models.Entity;
+@model TblHareket
+
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*ödünç verme işlemi de insert işlemi gibi çalışmaktadıer*@
+
+<div class="row">
+
+
+    <div class="col-lg-12">
+
+
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Ekleme Sayfası</h5>
+            </div>
+
+            <div class="card-body">
+                <form class="row g-3" method="post">
+
+                    <div class="col-md-2">
+                        <label class="form-label">Üye Adı Soyadı</label>
+                        @Html.DropDownListFor(x => x.UyeId, (List<SelectListItem>)ViewBag.uyeler, new { @class = "form-control form-select" })
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label">Kitap</label>
+                        @Html.DropDownListFor(x => x.KitapId, (List<SelectListItem>)ViewBag.kitaplar, new { @class = "form-control form-select" })
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label">Personel</label>
+                        @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control form-select" })
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="exampleInputdate" class="form-label">Alış Tarihi</label>
+                        <input  name="AlisTarihi" value="@DateTime.Now.ToShortDateString()" class="form-control" id="exampleInputdate">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="exampleInputdate2" class="form-label">İade Tarihi</label>
+                        <input  name="IadeTarihi"  value="@DateTime.Now.AddDays(7).ToShortDateString()"  class="form-control" id="exampleInputdate2">
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Ödünç Ver</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
