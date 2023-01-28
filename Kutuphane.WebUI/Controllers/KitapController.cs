@@ -86,7 +86,7 @@ namespace Kutuphane.WebUI.Controllers
             kitap.Sayfa = entity.Sayfa;
             kitap.BasimYili = entity.BasimYili;
             kitap.TblYazar = yazar;
-            kitap.TblCategory = category; ;
+            kitap.TblCategory = category; 
 
             dBEntities.SaveChangesAsync();
             return RedirectToAction("Index");

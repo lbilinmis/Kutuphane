@@ -23,17 +23,20 @@
 
                         <div class="col-md-2">
                             <label class="form-label">Üye Adı Soyadı</label>
-                            @Html.DropDownListFor(x => x.UyeId, (List<SelectListItem>)ViewBag.uyeler, new { @class = "form-control form-select" })
+                            @*@Html.DropDownListFor(x => x.UyeId, (List<SelectListItem>)ViewBag.uyeler, new { @class = "form-control form-select" })*@
+                            @Html.TextBoxFor(x => x.TblUye.Ad, new { @class = "form-control" })
                         </div>
 
                         <div class="col-md-2">
                             <label class="form-label">Kitap</label>
-                            @Html.DropDownListFor(x => x.KitapId, (List<SelectListItem>)ViewBag.kitaplar, new { @class = "form-control form-select" })
+                            @*@Html.DropDownListFor(x => x.KitapId, (List<SelectListItem>)ViewBag.kitaplar, new { @class = "form-control form-select" })*@
+                            @Html.TextBoxFor(x => x.TblKitap.Ad, new { @class = "form-control" })
                         </div>
 
                         <div class="col-md-2">
                             <label class="form-label">Personel</label>
-                            @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control form-select" })
+                          @*  @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control form-select" })*@
+                            @Html.TextBoxFor(x => x.TblPersonel.AdSoyad, new { @class = "form-control" })
                         </div>
 
                         <div class="col-md-2">

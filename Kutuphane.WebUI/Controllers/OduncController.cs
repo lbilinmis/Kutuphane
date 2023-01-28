@@ -12,7 +12,7 @@ namespace Kutuphane.WebUI.Controllers
         // GET: Odunc
         public ActionResult Index()
         {
-            var liste = dBEntities.TblHareket.ToList();
+            var liste = dBEntities.TblHareket.Where(x => x.Durumu != true).ToList();
 
             return View(liste);
         }
@@ -57,8 +57,22 @@ namespace Kutuphane.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult IadeAl()
+        public ActionResult IadeAl(TblHareket iadeIslemi)
         {
+            var iadeKayit = this.Find(iadeIslemi.Id);
+
+            var Personel = dBEntities.TblPersonel.Where(c => c.Id == iadeIslemi.PersonelId).FirstOrDefault();
+            var Kitap = dBEntities.TblKitap.Where(c => c.Id == iadeIslemi.KitapId).FirstOrDefault();
+            var Uye = dBEntities.TblUye.Where(c => c.Id == iadeIslemi.UyeId).FirstOrDefault();
+
+
+            iadeKayit.TeslimTarihi = DateTime.Now;
+            iadeKayit.Durumu = true;
+            iadeKayit.TblPersonel = Personel;
+            iadeKayit.TblKitap = Kitap;
+            iadeKayit.TblUye = Uye;
+
+            dBEntities.SaveChanges();
             return View();
         }
 
