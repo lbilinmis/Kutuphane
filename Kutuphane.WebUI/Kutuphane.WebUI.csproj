@@ -809,6 +809,7 @@
     <Content Include="Views\Uye\Edit.cshtml" />
     <Content Include="Views\Odunc\OduncVer.cshtml" />
     <Content Include="Views\Odunc\Index.cshtml" />
+    <Content Include="Views\Odunc\IadeAl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

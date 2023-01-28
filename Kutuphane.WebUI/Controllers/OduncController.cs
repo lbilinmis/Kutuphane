@@ -45,5 +45,29 @@ namespace Kutuphane.WebUI.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public ActionResult IadeAl(int Id)
+        {
+            ViewBag.personeller = this.SelectList_Personeller();
+            ViewBag.uyeler = this.SelectList_Uyeler();
+            ViewBag.kitaplar = this.SelectList_Kitaplar();
+
+            var iadeKayit = this.Find(Id);
+            return View(iadeKayit);
+        }
+
+        [HttpPost]
+        public ActionResult IadeAl()
+        {
+            return View();
+        }
+
+
+        public TblHareket Find(int id)
+        {
+            var hareket = dBEntities.TblHareket.Find(id);
+
+            return hareket;
+        }
     }
 }

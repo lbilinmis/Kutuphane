@@ -33,6 +33,7 @@
           <Property Name="PersonelId" Type="int" />
           <Property Name="AlisTarihi" Type="smalldatetime" />
           <Property Name="IadeTarihi" Type="smalldatetime" />
+          <Property Name="TeslimTarihi" Type="smalldatetime" />
           <Property Name="Durumu" Type="bit" />
         </EntityType>
         <EntityType Name="TblKasa">
@@ -248,6 +249,7 @@
           <NavigationProperty Name="TblKitap" Relationship="Self.FK_TblHareket_TblKitap" FromRole="TblHareket" ToRole="TblKitap" />
           <NavigationProperty Name="TblPersonel" Relationship="Self.FK_TblHareket_TblPersonel" FromRole="TblHareket" ToRole="TblPersonel" />
           <NavigationProperty Name="TblUye" Relationship="Self.FK_TblHareket_TblUye" FromRole="TblHareket" ToRole="TblUye" />
+          <Property Name="TeslimTarihi" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="TblKasa">
           <Key>
@@ -458,6 +460,7 @@
           <EntitySetMapping Name="TblHareket">
             <EntityTypeMapping TypeName="KutuphaneDBModel.TblHareket">
               <MappingFragment StoreEntitySet="TblHareket">
+                <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="KitapId" ColumnName="KitapId" />
                 <ScalarProperty Name="UyeId" ColumnName="UyeId" />

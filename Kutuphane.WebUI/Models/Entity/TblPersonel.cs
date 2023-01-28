@@ -11,8 +11,7 @@ namespace Kutuphane.WebUI.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TblPersonel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,8 +21,6 @@ namespace Kutuphane.WebUI.Models.Entity
         }
     
         public int Id { get; set; }
-
-        [Required(ErrorMessage ="Personel adý boþ geçilemez.")]
         public string AdSoyad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

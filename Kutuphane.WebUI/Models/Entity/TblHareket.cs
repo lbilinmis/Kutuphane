@@ -27,6 +27,7 @@ namespace Kutuphane.WebUI.Models.Entity
         public Nullable<System.DateTime> AlisTarihi { get; set; }
         public Nullable<System.DateTime> IadeTarihi { get; set; }
         public Nullable<bool> Durumu { get; set; }
+        public Nullable<System.DateTime> TeslimTarihi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblCeza> TblCeza { get; set; }

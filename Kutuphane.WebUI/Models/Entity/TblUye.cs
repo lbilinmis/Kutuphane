@@ -11,8 +11,7 @@ namespace Kutuphane.WebUI.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TblUye
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,20 +22,9 @@ namespace Kutuphane.WebUI.Models.Entity
         }
     
         public int Id { get; set; }
-        [Required(ErrorMessage ="Ad alaný boþ býrakýlamaz.")]
-        [StringLength(20,ErrorMessage ="En fazla 20 karakter girebilirsiniz")]
         public string Ad { get; set; }
-
-        [Required(ErrorMessage = "Soyad alaný boþ býrakýlamaz.")]
-        [StringLength(20, ErrorMessage = "En fazla 20 karakter girebilirsiniz")]
         public string Soyad { get; set; }
-
-        [Required]
-        [DataType(DataType.EmailAddress)]
         public string EMail { get; set; }
-
-        [Required(ErrorMessage = "Kullanýcý alaný boþ býrakýlamaz.")]
-        [StringLength(20, ErrorMessage = "En fazla 20 karakter girebilirsiniz")]
         public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
         public string Fotograf { get; set; }
