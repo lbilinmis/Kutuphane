@@ -23,6 +23,13 @@
           <Property Name="ParaCezasi" Type="decimal" Precision="18" Scale="2" />
           <Property Name="HareketId" Type="int" />
         </EntityType>
+        <EntityType Name="TblHakkimizda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="TblHareket">
           <Key>
             <PropertyRef Name="Id" />
@@ -35,6 +42,16 @@
           <Property Name="IadeTarihi" Type="smalldatetime" />
           <Property Name="TeslimTarihi" Type="smalldatetime" />
           <Property Name="Durumu" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblIletisim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Konu" Type="varchar" MaxLength="50" />
+          <Property Name="Mesaj" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="TblKasa">
           <Key>
@@ -56,6 +73,7 @@
           <Property Name="Sayfa" Type="varchar" MaxLength="4" />
           <Property Name="YazarId" Type="int" />
           <Property Name="Durum" Type="bit" />
+          <Property Name="ResimUrl" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="TblPersonel">
           <Key>
@@ -174,7 +192,9 @@
         <EntityContainer Name="KutuphaneDBModelStoreContainer">
           <EntitySet Name="TblCategory" EntityType="Self.TblCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCeza" EntityType="Self.TblCeza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblHakkimizda" EntityType="Self.TblHakkimizda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblHareket" EntityType="Self.TblHareket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblKasa" EntityType="Self.TblKasa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblKitap" EntityType="Self.TblKitap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" Schema="dbo" store:Type="Tables" />
@@ -274,6 +294,7 @@
           <NavigationProperty Name="TblHareket" Relationship="Self.FK_TblHareket_TblKitap" FromRole="TblKitap" ToRole="TblHareket" />
           <NavigationProperty Name="TblYazar" Relationship="Self.FK_TblKitap_TblYazar" FromRole="TblKitap" ToRole="TblYazar" />
           <Property Name="Durum" Type="Boolean" />
+          <Property Name="ResimUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TblPersonel">
           <Key>
@@ -430,7 +451,26 @@
             <End Role="TblYazar" EntitySet="TblYazar" />
             <End Role="TblKitap" EntitySet="TblKitap" />
           </AssociationSet>
+          <EntitySet Name="TblHakkimizda" EntityType="KutuphaneDBModel.TblHakkimizda" />
+          <EntitySet Name="TblIletisim" EntityType="KutuphaneDBModel.TblIletisim" />
         </EntityContainer>
+        <EntityType Name="TblHakkimizda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblIletisim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mesaj" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -483,6 +523,7 @@
           <EntitySetMapping Name="TblKitap">
             <EntityTypeMapping TypeName="KutuphaneDBModel.TblKitap">
               <MappingFragment StoreEntitySet="TblKitap">
+                <ScalarProperty Name="ResimUrl" ColumnName="ResimUrl" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
@@ -524,6 +565,25 @@
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Soyad" ColumnName="Soyad" />
                 <ScalarProperty Name="Detay" ColumnName="Detay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblHakkimizda">
+            <EntityTypeMapping TypeName="KutuphaneDBModel.TblHakkimizda">
+              <MappingFragment StoreEntitySet="TblHakkimizda">
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblIletisim">
+            <EntityTypeMapping TypeName="KutuphaneDBModel.TblIletisim">
+              <MappingFragment StoreEntitySet="TblIletisim">
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

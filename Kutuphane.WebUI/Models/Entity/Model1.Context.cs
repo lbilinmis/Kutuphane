@@ -33,5 +33,7 @@ namespace Kutuphane.WebUI.Models.Entity
         public virtual DbSet<TblPersonel> TblPersonel { get; set; }
         public virtual DbSet<TblUye> TblUye { get; set; }
         public virtual DbSet<TblYazar> TblYazar { get; set; }
+        public virtual DbSet<TblHakkimizda> TblHakkimizda { get; set; }
+        public virtual DbSet<TblIletisim> TblIletisim { get; set; }
     }
 }

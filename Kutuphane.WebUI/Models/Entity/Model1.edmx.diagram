@@ -20,6 +20,8 @@
         <AssociationConnector Association="KutuphaneDBModel.FK_TblHareket_TblPersonel" ManuallyRouted="false" />
         <AssociationConnector Association="KutuphaneDBModel.FK_TblHareket_TblUye" ManuallyRouted="false" />
         <AssociationConnector Association="KutuphaneDBModel.FK_TblKitap_TblYazar" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KutuphaneDBModel.TblHakkimizda" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KutuphaneDBModel.TblIletisim" Width="1.5" PointX="6.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

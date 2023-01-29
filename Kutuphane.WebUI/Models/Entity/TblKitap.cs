@@ -28,6 +28,7 @@ namespace Kutuphane.WebUI.Models.Entity
         public string Sayfa { get; set; }
         public Nullable<int> YazarId { get; set; }
         public Nullable<bool> Durum { get; set; }
+        public string ResimUrl { get; set; }
     
         public virtual TblCategory TblCategory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
