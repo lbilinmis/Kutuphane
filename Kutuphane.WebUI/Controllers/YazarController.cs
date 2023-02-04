@@ -26,6 +26,11 @@ namespace Kutuphane.WebUI.Controllers
         [HttpPost]
         public ActionResult Add(TblYazar entity)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(entity);
+
+            }
             dBEntities.TblYazar.Add(entity);
             dBEntities.SaveChanges();
 

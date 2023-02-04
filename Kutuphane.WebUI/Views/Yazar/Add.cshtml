@@ -1,5 +1,5 @@
 ﻿@using Kutuphane.WebUI.Models.Entity;
-@model TblCategory
+@model TblYazar
 
 @{
     ViewBag.Title = "Add";
@@ -22,12 +22,14 @@
                 <form class="row g-3" method="post">
                     <div class="col-md-6">
                         <label for="validationDefault01" class="form-label">Adı</label>
-                        <input type="text" class="form-control" name="Ad" id="validationDefault01" value="" required>
+                        <input type="text" class="form-control" name="Ad" id="validationDefault01" value="">
+                        @Html.ValidationMessageFor(x=>x.Ad)
                     </div>
 
                     <div class="col-md-6">
                         <label for="validationDefault02" class="form-label">Soyadı</label>
-                        <input type="text" class="form-control" name="Soyad" id="validationDefault02" value="" required>
+                        <input type="text" class="form-control" name="Soyad" id="validationDefault02" value="" >
+                        @Html.ValidationMessageFor(x => x.Soyad)
                     </div>
 
                    
