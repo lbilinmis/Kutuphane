@@ -2,10 +2,9 @@
     ViewBag.Title = "Home Page";
 }
 <!-- jsvectormap css -->
-<link href="~/Content/adminpanel/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
-
+<!--<link href="~/Content/adminpanel/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />-->
 <!--Swiper slider css-->
-<link href="~/Content/adminpanel/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+<!--<link href="~/Content/adminpanel/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />-->
 
 <div class="row">
     <div class="col-xl-3 col-md-6">
@@ -25,7 +24,7 @@
                 <div class="d-flex align-items-end justify-content-between mt-4">
                     <div>
                         <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="@(ViewBag.ToplamCeza+"TL")">@ViewBag.ToplamCeza</span></h4>
-                      
+
                     </div>
                     <div class="avatar-sm flex-shrink-0">
                         <span class="avatar-title bg-success rounded fs-3">
@@ -54,7 +53,7 @@
                 <div class="d-flex align-items-end justify-content-between mt-4">
                     <div>
                         <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="@ViewBag.KitapSayisi"></span></h4>
-                       
+
                     </div>
                     <div class="avatar-sm flex-shrink-0">
                         <span class="avatar-title bg-info rounded fs-3">
@@ -83,7 +82,7 @@
                 <div class="d-flex align-items-end justify-content-between mt-4">
                     <div>
                         <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="@ViewBag.UyeSayisi"></span> </h4>
-                     
+
                     </div>
                     <div class="avatar-sm flex-shrink-0">
                         <span class="avatar-title bg-warning rounded fs-3">
@@ -412,36 +411,29 @@
             </div><!-- end cardbody -->
         </div><!-- end card -->
     </div><!-- end col -->
-</div><!
+</div>
 
-<!-- JAVASCRIPT -->
-<script src="~/Content/adminpanel/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="~/Content/adminpanel/assets/libs/simplebar/simplebar.min.js"></script>
-<script src="~/Content/adminpanel/assets/libs/node-waves/waves.min.js"></script>
-<script src="~/Content/adminpanel/assets/libs/feather-icons/feather.min.js"></script>
-<script src="~/Content/adminpanel/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-<script src="~/Content/adminpanel/assets/js/plugins.js"></script>
+@section galery{
+    <!-- apexcharts -->
+    <script src="~/Content/adminpanel/assets/libs/apexcharts/apexcharts.min.js"></script>
 
-<!-- apexcharts -->
-<script src="~/Content/adminpanel/assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- Vector map-->
+    <script src="~/Content/adminpanel/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="~/Content/adminpanel/assets/libs/jsvectormap/maps/world-merc.js"></script>
 
-<!-- Vector map-->
-<script src="~/Content/adminpanel/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
-<script src="~/Content/adminpanel/assets/libs/jsvectormap/maps/world-merc.js"></script>
+    <!--Swiper slider js-->
+    <script src="~/Content/adminpanel/assets/libs/swiper/swiper-bundle.min.js"></script>
 
-<!--Swiper slider js-->
-<script src="~/Content/adminpanel/assets/libs/swiper/swiper-bundle.min.js"></script>
-
-<!-- Dashboard init -->
-<script src="~/Content/adminpanel/assets/js/pages/dashboard-ecommerce.init.js"></script>
+    <!-- Dashboard init -->
+    <script src="~/Content/adminpanel/assets/js/pages/dashboard-ecommerce.init.js"></script>
 
 
-<!-- Chart JS -->
-<script src="~/Content/adminpanel/assets/libs/chart.js/chart.min.js"></script>
+    <!-- Chart JS -->
+    <script src="~/Content/adminpanel/assets/libs/chart.js/chart.min.js"></script>
 
-<!-- chartjs init -->
-<script src="~/Content/adminpanel/assets/js/pages/chartjs.init.js"></script>
+    <!-- chartjs init -->
+    <script src="~/Content/adminpanel/assets/js/pages/chartjs.init.js"></script>
 
-<!-- App js -->
-<script src="~/Content/adminpanel/assets/js/app.js"></script>
+
+}
 

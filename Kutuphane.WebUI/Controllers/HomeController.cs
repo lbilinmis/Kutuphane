@@ -9,6 +9,7 @@ namespace Kutuphane.WebUI.Controllers
 {
     public class HomeController : BaseController
     {
+        [Authorize]
         public ActionResult Index()
         {
             ViewBag.UyeSayisi = dBEntities.TblUye.ToList().Count();

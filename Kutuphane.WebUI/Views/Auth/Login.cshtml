@@ -74,34 +74,37 @@
                                     <p class="text-muted">Kütüphane Sistemi.</p>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="">
-
-                                        <div class="mb-3">
-                                            <label for="username" class="form-label">Kullanıcı adı</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Enter username">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <div class="float-end">
-                                                <a href="/Auth/ForgotPassword" class="text-muted">Şifremi unuttum ?</a>
+                                    @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+                                    {
+                                        
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Kullanıcı adı</label>
+                                                <input type="text" class="form-control" name="EMail" id="EMail" placeholder="Enter username">
                                             </div>
-                                            <label class="form-label" for="password-input">Şifre</label>
-                                            <div class="position-relative auth-pass-inputgroup mb-3">
-                                                <input type="password" class="form-control pe-5" placeholder="Enter password" id="password-input">
-                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted shadow-none" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+
+                                            <div class="mb-3">
+                                                <div class="float-end">
+                                                    <a href="/Auth/ForgotPassword" class="text-muted">Şifremi unuttum ?</a>
+                                                </div>
+                                                <label class="form-label" for="password-input">Şifre</label>
+                                                <div class="position-relative auth-pass-inputgroup mb-3">
+                                                    <input type="password" class="form-control pe-5" placeholder="Enter password" name="Sifre" id="Sifre">
+                                                    <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted shadow-none" type="button" id="Sifre"><i class="ri-eye-fill align-middle"></i></button>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
-                                            <label class="form-check-label" for="auth-remember-check">Beni hatırla</label>
-                                        </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
+                                                <label class="form-check-label" for="auth-remember-check">Beni hatırla</label>
+                                            </div>
 
-                                        <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Giriş Yap</button>
-                                        </div>
+                                            <div class="mt-4">
+                                                <button class="btn btn-success w-100" type="submit">Giriş Yap</button>
+                                            </div>
 
-                                    </form>
+                                    
+                                    }
+
                                 </div>
                             </div>
                             <!-- end card body -->
