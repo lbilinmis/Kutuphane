@@ -4,6 +4,16 @@
 @{
     ViewBag.Title = "Iade Al";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    TimeSpan fark;
+    if (Model != null)
+    {
+        if (Model.IadeTarihi != null && DateTime.Now > Model.IadeTarihi)
+        {
+            fark = Convert.ToDateTime(DateTime.Now.ToShortDateString()) - DateTime.Parse(Model.IadeTarihi.ToString());
+
+        }
+    }
 }
 
 
@@ -35,13 +45,13 @@
 
                         <div class="col-md-2">
                             <label class="form-label">Personel</label>
-                          @*  @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control form-select" })*@
+                            @*  @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control form-select" })*@
                             @Html.TextBoxFor(x => x.TblPersonel.AdSoyad, new { @class = "form-control" })
                         </div>
 
                         <div class="col-md-2">
                             <label for="exampleInputdate" class="form-label">Alış Tarihi</label>
-                            @Html.TextBoxFor(x => x.AlisTarihi,"{0:dd.MM.yyyy}", new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.AlisTarihi, "{0:dd.MM.yyyy}", new { @class = "form-control" })
                         </div>
 
                         <div class="col-md-2">
@@ -52,6 +62,12 @@
                         <div class="col-md-2">
                             <label for="exampleInputdate" class="form-label">Teslimat Tarihi</label>
                             <input name="TeslimTarihi" value="@DateTime.Now.ToShortDateString()" class="form-control" id="exampleInputdate">
+                        </div>
+
+
+                        <div class="col-md-2">
+                            <label for="gec" class="form-label">Gecikme Süresi</label>
+                            <input name="gecGetirilmeGunSayisi" value="@ViewBag.GecikmeSuresi" class="form-control" id="gec">
                         </div>
 
 

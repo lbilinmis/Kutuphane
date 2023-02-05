@@ -53,6 +53,9 @@ namespace Kutuphane.WebUI.Controllers
             ViewBag.kitaplar = this.SelectList_Kitaplar();
 
             var iadeKayit = this.Find(Id);
+            TimeSpan fark = Convert.ToDateTime(DateTime.Now.ToShortDateString()) - DateTime.Parse(iadeKayit.IadeTarihi.ToString());
+
+            ViewBag.GecikmeSuresi = fark.TotalDays;
             return View(iadeKayit);
         }
 

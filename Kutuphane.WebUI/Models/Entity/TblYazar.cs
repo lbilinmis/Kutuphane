@@ -11,8 +11,7 @@ namespace Kutuphane.WebUI.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TblYazar
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,10 +21,7 @@ namespace Kutuphane.WebUI.Models.Entity
         }
     
         public int Id { get; set; }
-        [Required(ErrorMessage ="Yazarýn adýný boþ geçemezsiniz")]
         public string Ad { get; set; }
-
-        [Required(ErrorMessage = "Yazarýn soyadýný boþ geçemezsiniz")]
         public string Soyad { get; set; }
         public string Detay { get; set; }
     

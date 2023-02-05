@@ -189,6 +189,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="EnFazlaKitapOlanYazar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="KutuphaneDBModelStoreContainer">
           <EntitySet Name="TblCategory" EntityType="Self.TblCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCeza" EntityType="Self.TblCeza" Schema="dbo" store:Type="Tables" />
@@ -453,6 +454,7 @@
           </AssociationSet>
           <EntitySet Name="TblHakkimizda" EntityType="KutuphaneDBModel.TblHakkimizda" />
           <EntitySet Name="TblIletisim" EntityType="KutuphaneDBModel.TblIletisim" />
+          <FunctionImport Name="EnFazlaKitapOlanYazar" ReturnType="Collection(KutuphaneDBModel.EnFazlaKitapOlanYazar_Result)" />
         </EntityContainer>
         <EntityType Name="TblHakkimizda">
           <Key>
@@ -471,6 +473,10 @@
           <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Mesaj" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="EnFazlaKitapOlanYazar_Result">
+          <Property Type="String" Name="Column1" Nullable="true" MaxLength="101" />
+          <Property Type="Int32" Name="TOPLAM" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -587,6 +593,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="EnFazlaKitapOlanYazar" FunctionName="KutuphaneDBModel.Store.EnFazlaKitapOlanYazar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KutuphaneDBModel.EnFazlaKitapOlanYazar_Result">
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+                <ScalarProperty Name="TOPLAM" ColumnName="TOPLAM" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

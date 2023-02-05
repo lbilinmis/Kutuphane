@@ -12,6 +12,8 @@ namespace Kutuphane.WebUI.Models.Entity
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class KutuphaneDBEntities : DbContext
     {
@@ -35,5 +37,10 @@ namespace Kutuphane.WebUI.Models.Entity
         public virtual DbSet<TblYazar> TblYazar { get; set; }
         public virtual DbSet<TblHakkimizda> TblHakkimizda { get; set; }
         public virtual DbSet<TblIletisim> TblIletisim { get; set; }
+    
+        public virtual ObjectResult<EnFazlaKitapOlanYazar_Result> EnFazlaKitapOlanYazar()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<EnFazlaKitapOlanYazar_Result>("EnFazlaKitapOlanYazar");
+        }
     }
 }
