@@ -1035,6 +1035,7 @@
     <Content Include="Views\Auth\Profilim.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
+    <Content Include="Views\Auth\KitapGecmisi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

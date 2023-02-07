@@ -62,6 +62,15 @@ namespace Kutuphane.WebUI.Controllers
         }
 
 
+        public ActionResult KitapGecmisi()
+        {
+            TblUye loginUye = (TblUye)Session["user"];
+
+            List<TblHareket> list = dBEntities.TblHareket.Where(x => x.UyeId == loginUye.Id).ToList();
+
+            return View(list);
+        }
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
