@@ -1,0 +1,76 @@
+﻿@using Kutuphane.WebUI.Models.Entity;
+@model List<TblMesajlar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+
+
+    <div class="col-lg-12">
+
+
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Mesaj Listesi</h5>
+            </div>
+            <div class="card-body">
+                <a href="/Message/NewMessage" class="btn btn-primary">Yeni Mesaj</a>
+            </div>
+            @*@using (Html.BeginForm("Index", "Kitap", FormMethod.Get))
+            {
+                <div class="card-body">
+                    <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Kitap ara ..." />
+                </div>
+            }*@
+
+            <div class="card-body">
+                <table id="scroll-vertical" class="table table-bordered dt-responsive nowrap align-middle mdl-data-table" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Gönderen</th>
+                            <th>Alıcı</th>
+                            <th>Konu</th>
+                            <th>İçerik</th>
+                            <th>Tarih</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Gonderen</td>
+                                    <td>@item.Alici</td>
+                                    <td>@item.Konu</td>
+                                    <td>@item.Icerik</td>
+                                    <td>@item.Tarih</td>
+
+                                    <td><a id="delete" href="/Message/Delete/@item.Id"><span class="badge badge-soft-danger">Sil</span></a></td>
+
+
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="9"><span class="badge badge-border badge-gradient-danger">Kayıt bulunamadı</span></td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

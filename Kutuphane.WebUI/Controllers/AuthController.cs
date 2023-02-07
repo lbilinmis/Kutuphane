@@ -51,7 +51,7 @@ namespace Kutuphane.WebUI.Controllers
         [HttpPost]
         public ActionResult Profilim(TblUye entity)
         {
-            TblUye guncellemeUye = dBEntities.TblUye.FirstOrDefault(x=>x.Id== entity.Id);
+            TblUye guncellemeUye = dBEntities.TblUye.FirstOrDefault(x=>x.EMail== entity.EMail);
 
             guncellemeUye.Sifre= entity.Sifre;
             guncellemeUye.Okul= entity.Okul;
@@ -61,6 +61,14 @@ namespace Kutuphane.WebUI.Controllers
             return RedirectToAction("Index","Home");
         }
 
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session["user"]=null; 
+
+            return RedirectToAction("Index","Home");
+        }
 
     }
 }

@@ -1,0 +1,49 @@
+﻿@using Kutuphane.WebUI.Models.Entity;
+@model TblMesajlar
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+
+
+    <div class="col-lg-12">
+
+
+        <div class="card">
+         
+            <div class="card-body">
+                <form class="row g-3" method="post">
+                    <div class="col-md-6">
+                        <label class="form-label">Konusu</label>
+                        @Html.TextBoxFor(x => x.Konu, new { @class = "form-control" })
+                    </div>
+
+                 
+                    <div class="col-md-6">
+                        <label class="form-label">Gönderilecek Mail Adresi</label>
+                        @Html.TextBoxFor(x => x.Alici, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label">Mesajınız</label>
+                        @Html.TextAreaFor(x => x.Icerik, new { @class = "form-control" })
+                    </div>
+
+
+
+                    <input type="hidden" name="Durum" value="true" />
+
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Gönder</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
