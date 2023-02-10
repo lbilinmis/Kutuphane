@@ -12,7 +12,7 @@ namespace Kutuphane.WebUI.Controllers
         // GET: Kategori
         public ActionResult Index()
         {
-            var liste = dBEntities.TblCategory.ToList();
+            var liste = dBEntities.TblCategory.Where(x=>x.Durum==true).ToList();
 
             return View(liste);
         }
@@ -54,7 +54,8 @@ namespace Kutuphane.WebUI.Controllers
         public ActionResult Delete(int id)
         {
             var category = Find(id);
-            dBEntities.TblCategory.Remove(category);
+            //dBEntities.TblCategory.Remove(category);
+            category.Durum = false;
             dBEntities.SaveChanges();
             return RedirectToAction("Index");
         }

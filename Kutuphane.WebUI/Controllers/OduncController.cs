@@ -21,7 +21,7 @@ namespace Kutuphane.WebUI.Controllers
         {
             ViewBag.personeller = this.SelectList_Personeller();
             ViewBag.uyeler = this.SelectList_Uyeler();
-            ViewBag.kitaplar = this.SelectList_Kitaplar();
+            ViewBag.kitaplar = this.SelectList_Kitaplar(true);
 
             return View();
         }
@@ -35,9 +35,11 @@ namespace Kutuphane.WebUI.Controllers
 
             var kitap = dBEntities.TblKitap.Where(c => c.Id == entity.KitapId).FirstOrDefault();
             var personel = dBEntities.TblPersonel.Where(c => c.Id == entity.PersonelId).FirstOrDefault();
+            var uye = dBEntities.TblUye.Where(c => c.Id == entity.UyeId).FirstOrDefault();
 
             entity.TblKitap = kitap;
             entity.TblPersonel = personel;
+            entity.TblUye = uye;
 
             dBEntities.TblHareket.Add(entity);
             dBEntities.SaveChanges();
@@ -50,7 +52,7 @@ namespace Kutuphane.WebUI.Controllers
         {
             ViewBag.personeller = this.SelectList_Personeller();
             ViewBag.uyeler = this.SelectList_Uyeler();
-            ViewBag.kitaplar = this.SelectList_Kitaplar();
+            ViewBag.kitaplar = this.SelectList_Kitaplar(false);
 
             var iadeKayit = this.Find(Id);
             TimeSpan fark = Convert.ToDateTime(DateTime.Now.ToShortDateString()) - DateTime.Parse(iadeKayit.IadeTarihi.ToString());

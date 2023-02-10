@@ -34,7 +34,7 @@ namespace Kutuphane.WebUI.Controllers
             List<SelectListItem> yazarlar = (from yazar in dBEntities.TblYazar.ToList()
                                              select new SelectListItem
                                              {
-                                                 Text = yazar.Ad + "" + yazar.Soyad,
+                                                 Text = yazar.Ad + " " + yazar.Soyad,
                                                  Value = yazar.Id.ToString()
                                              }).ToList();
 
@@ -66,14 +66,27 @@ namespace Kutuphane.WebUI.Controllers
             return personeller;
         }
 
-        public List<SelectListItem> SelectList_Kitaplar()
+        public List<SelectListItem> SelectList_Kitaplar(bool? durum)
         {
-            List<SelectListItem> kitaplar = (from kitap in dBEntities.TblKitap.ToList()
-                                                select new SelectListItem
+            List<TblKitap> kitapListesi = new List<TblKitap>();
+            if (durum.HasValue)
+            {
+                kitapListesi = dBEntities.TblKitap.Where(x => x.Durum == durum.Value).ToList();
+            }
+            else
+            {
+                kitapListesi= dBEntities.TblKitap.ToList();
+            }
+        
+
+            List<SelectListItem> kitaplar = (from kitap in kitapListesi
+                                             select new SelectListItem
                                                 {
                                                     Text = kitap.Ad,
                                                     Value = kitap.Id.ToString()
                                                 }).ToList();
+
+            
 
             return kitaplar;
         }

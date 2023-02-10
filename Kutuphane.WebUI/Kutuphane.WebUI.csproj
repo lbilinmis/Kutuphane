@@ -1036,6 +1036,8 @@
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
     <Content Include="Views\Auth\KitapGecmisi.cshtml" />
+    <Content Include="Views\Yazar\Kitaplar.cshtml" />
+    <Content Include="Views\Uye\AlinanKitaplar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

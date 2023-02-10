@@ -72,5 +72,18 @@ namespace Kutuphane.WebUI.Controllers
 
             return yazar;
         }
+
+        public ActionResult Kitaplar(int id)
+        {
+            var yazar = Find(id);
+            List<TblKitap> kitaplar = new List<TblKitap>();
+            if (yazar != null)
+            {
+                kitaplar = dBEntities.TblKitap.Where(x => x.YazarId == id).ToList();
+
+            }
+
+            return View(kitaplar);
+        }
     }
 }

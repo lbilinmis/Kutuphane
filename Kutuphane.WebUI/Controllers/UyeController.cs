@@ -1,5 +1,6 @@
 ﻿using Kutuphane.WebUI.Models.Entity;
 using PagedList;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -74,6 +75,16 @@ namespace Kutuphane.WebUI.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult AlinanKitaplar(int id)
+        {
+            List<TblHareket> kitaplar = new List<TblHareket>();
+            var personel = dBEntities.TblUye.Find(id);
+            if (personel!=null)
+            {
+                kitaplar=dBEntities.TblHareket.Where(x=>x.UyeId==id).ToList();
+            }
+            return View(kitaplar);
+        }
         public TblUye Find(int id)
         {
             var personel = dBEntities.TblUye.Find(id);
