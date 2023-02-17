@@ -24,6 +24,15 @@
           <Property Name="ParaCezasi" Type="decimal" Precision="18" Scale="2" />
           <Property Name="HareketId" Type="int" />
         </EntityType>
+        <EntityType Name="TblDuyuru">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kategori" Type="varchar" MaxLength="50" />
+          <Property Name="Icerik" Type="text" />
+          <Property Name="Tarih" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="TblHakkimizda">
           <Key>
             <PropertyRef Name="Id" />
@@ -205,6 +214,7 @@
         <EntityContainer Name="KutuphaneDBModelStoreContainer">
           <EntitySet Name="TblCategory" EntityType="Self.TblCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCeza" EntityType="Self.TblCeza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDuyuru" EntityType="Self.TblDuyuru" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblHakkimizda" EntityType="Self.TblHakkimizda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblHareket" EntityType="Self.TblHareket" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" Schema="dbo" store:Type="Tables" />
@@ -470,6 +480,7 @@
           <EntitySet Name="TblIletisim" EntityType="KutuphaneDBModel.TblIletisim" />
           <FunctionImport Name="EnFazlaKitapOlanYazar" ReturnType="Collection(KutuphaneDBModel.EnFazlaKitapOlanYazar_Result)" />
           <EntitySet Name="TblMesajlar" EntityType="KutuphaneDBModel.TblMesajlar" />
+          <EntitySet Name="TblDuyuru" EntityType="KutuphaneDBModel.TblDuyuru" />
         </EntityContainer>
         <EntityType Name="TblHakkimizda">
           <Key>
@@ -500,6 +511,15 @@
           <Property Name="Gonderen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Alici" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TblDuyuru">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kategori" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Tarih" Type="DateTime" Precision="0" />
         </EntityType>
@@ -636,6 +656,16 @@
                 <ScalarProperty Name="Konu" ColumnName="Konu" />
                 <ScalarProperty Name="Alici" ColumnName="Alici" />
                 <ScalarProperty Name="Gonderen" ColumnName="Gonderen" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDuyuru">
+            <EntityTypeMapping TypeName="KutuphaneDBModel.TblDuyuru">
+              <MappingFragment StoreEntitySet="TblDuyuru">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="Kategori" ColumnName="Kategori" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

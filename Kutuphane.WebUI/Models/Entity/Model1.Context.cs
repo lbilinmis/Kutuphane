@@ -38,6 +38,7 @@ namespace Kutuphane.WebUI.Models.Entity
         public virtual DbSet<TblHakkimizda> TblHakkimizda { get; set; }
         public virtual DbSet<TblIletisim> TblIletisim { get; set; }
         public virtual DbSet<TblMesajlar> TblMesajlar { get; set; }
+        public virtual DbSet<TblDuyuru> TblDuyuru { get; set; }
     
         public virtual ObjectResult<EnFazlaKitapOlanYazar_Result> EnFazlaKitapOlanYazar()
         {

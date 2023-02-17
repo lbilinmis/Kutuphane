@@ -23,6 +23,7 @@
         <EntityTypeShape EntityType="KutuphaneDBModel.TblHakkimizda" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="KutuphaneDBModel.TblIletisim" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="KutuphaneDBModel.TblMesajlar" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="KutuphaneDBModel.TblDuyuru" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

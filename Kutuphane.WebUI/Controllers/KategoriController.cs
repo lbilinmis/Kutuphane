@@ -66,5 +66,22 @@ namespace Kutuphane.WebUI.Controllers
 
             return category;
         }
+
+
+        public ActionResult AddNew()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddNew(TblCategory entity)
+        {
+            entity.Durum = true;
+            dBEntities.TblCategory.Add(entity);
+            dBEntities.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

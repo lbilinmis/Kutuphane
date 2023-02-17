@@ -38,9 +38,9 @@
                                     <td>@item.Id</td>
                                     <td>@item.Ad</td>
 
-                                    <td><a id="delete"  href="/Kategori/Delete/@item.Id"><span class="badge badge-soft-danger">Sil</span></a></td>
-                                    
-                                       
+                                    <td><a id="delete" href="/Kategori/Delete/@item.Id"><span class="badge badge-soft-danger">Sil</span></a></td>
+
+
                                     <td><a href="/Kategori/Edit/@item.Id"><span class="badge badge-soft-info">Düzenle</span></a></td>
 
                                 </tr>
@@ -62,3 +62,41 @@
     </div>
 </div>
 
+
+
+
+<!-- Varying Modal Content -->
+<div class="hstack gap-2 flex-wrap">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#varyingcontentModal">Yeni Kategori</button>
+</div>
+
+<!-- Varying modal content -->
+<div class="modal fade" id="varyingcontentModal" tabindex="-1" aria-labelledby="varyingcontentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="varyingcontentModalLabel">Kategori Ekleme</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Kategori/AddNew/">
+
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="Ad" class="col-form-label">Kategori Adı:</label>
+
+                        <input type="text" class="form-control" id="Ad" name="Ad">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Kapat</button>
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>

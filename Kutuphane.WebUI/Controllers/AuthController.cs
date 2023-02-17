@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace Kutuphane.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class AuthController : BaseController
     {
         // GET: Auth
